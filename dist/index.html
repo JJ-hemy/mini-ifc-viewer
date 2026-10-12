@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111722" />
+    <title>Property IFC + LCC Viewer</title>
+    <script type="module" crossorigin src="./assets/index-CU0s8iEN.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DBbrTqu-.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="toolbar">
+        <div>
+          <h1>Property viewer</h1>
+          <p>Select a property to load its aligned IFC and LCC scan.</p>
+        </div>
+
+        <div class="actions">
+          <label class="property-field" for="property-select">
+            <span>Property</span>
+            <select id="property-select">
+              <option value="">Select property…</option>
+            </select>
+          </label>
+          <button id="fit-button" type="button" disabled>Fit property</button>
+        </div>
+      </header>
+
+      <div class="workspace">
+        <section id="viewer" class="viewer" aria-label="Property 3D viewport">
+          <div id="empty-state" class="empty-state">
+            <strong>Choose BS17 or SOL10</strong>
+            <span>The IFC and LCC scan load together—no upload required.</span>
+          </div>
+
+          <section id="layer-card" class="layer-card" hidden>
+            <div class="layer-card-heading">
+              <div>
+                <span class="eyebrow">Active property</span>
+                <strong id="property-name"></strong>
+              </div>
+              <span class="alignment-badge">Metadata aligned</span>
+            </div>
+            <p id="property-description"></p>
+            <label><input id="show-ifc" type="checkbox" checked /> IFC / BIM</label>
+            <label><input id="show-scan" type="checkbox" checked /> LCC scan</label>
+            <details>
+              <summary>Alignment information</summary>
+              <p id="alignment-note"></p>
+            </details>
+          </section>
+        </section>
+
+        <aside id="properties-panel" class="properties-panel" aria-label="Selected object properties" hidden>
+          <header class="properties-header">
+            <div>
+              <span class="eyebrow">IFC selection</span>
+              <h2>Object properties</h2>
+            </div>
+            <button id="close-properties" class="icon-button" type="button" aria-label="Close properties">×</button>
+          </header>
+          <div id="properties-content" class="properties-content"></div>
+        </aside>
+      </div>
+
+      <footer class="status-bar">
+        <span id="status" role="status" aria-live="polite">Select a property to begin.</span>
+        <span>Click IFC: properties · Left drag: orbit · Right drag: pan · Wheel: zoom</span>
+      </footer>
+    </main>
+
+  </body>
+</html>
